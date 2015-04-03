@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0099)http://neverfear.org/blog/view/12/Regex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>NEVERFEAR.org - Regex tutorial for people who should know Regex, but do not.. Part 1</title>
+		<link rel="stylesheet" href="http://neverfear.org/style.css">
+		<link rel="stylesheet" href="http://neverfear.org/members.css">
+		<link rel="stylesheet" href="http://neverfear.org/markdown/geshi.css">
+		<link rel="alternate" type="application/rss+xml" title="Weblog RSS feed" href="http://neverfear.org/rss/weblog/">
+		<link rel="alternate" type="application/rss+xml" title="Weblog RSS feed for post comments" href="http://neverfear.org/rss/comments/">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="http://neverfear.org/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="http://neverfear.org/favicon.ico">
+		<script async="" type="text/javascript" src="./Regex Tutorial Part 1_files/ca-pub-4627728740189107.js"></script><script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 1_files/ticktock.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 1_files/browser.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 1_files/toc.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 1_files/xmlhttp.js"></script>
+		<meta name="description" content="A software programming and technology community."> 
+		<meta name="keywords" content="C,Python,PHP,Lisp,Scheme,DSSSL,XML,XSLT,PIC,ICMP,TCP,IP,HTML,CSS,Microcode,Cryptography,Development,Technology,Source code,JavaScript,JavaScript canvas element,How-to,IRC,MySQL,tvnamer,Git,Ascii,GPG,Geeks,Nerds,Programmers,Developers,Telephony">
+	</head>
+	<body onload="DoClockTick(&#39;time&#39;); CheckBrowser();">
+		
+		<div id="page">
+			
+			<div id="banner">
+				<table id="banner-table">
+					<tbody><tr>
+						<td id="rss-container">
+							<a href="http://neverfear.org/rss/weblog/" id="rss-link" class="rss"><img alt="RSS" title="RSS Feed" src="./Regex Tutorial Part 1_files/rssorange.png" class="rss-icon"></a>
+						</td> <!-- /rss-container -->
+					</tr>
+				</tbody></table> <!-- /banner-table -->
+			</div> <!-- /banner -->
+		
+			<div id="page-body">
+			
+				<div id="navigation">
+					<a href="http://neverfear.org/blog/">Weblog</a> <a href="http://neverfear.org/archive/">Article Index</a> <a href="http://neverfear.org/search/">Search</a> <a href="http://neverfear.org/members/list/">Members</a> <a href="http://twitter.com/NeverfearOrg">Twitter</a> <a href="http://neverfear.org/rss/">RSS</a> <a href="http://neverfear.org/login/">Login</a> 					
+				</div> <!-- /navigation -->
+	               		
+				<div id="associates">
+					See also: <a href="http://imagepaste.nullnetwork.net/">Image paste bin</a> <a href="http://wol.nullnetwork.net/">Wake-On-Lan client</a> <a href="http://cork.nullnetwork.net/">Corkboard</a> 				</div>
+				 
+				<div id="page-content">
+	
+	
+				<div id="post-container-12" class="post-container">
+					<div id="post-title-12" class="post-title">
+						<h1><a href="./Regex Tutorial Part 1_files/Regex Tutorial Part 1.html" id="post-title-link-12" class="post-title-link">Regex tutorial for people who should know Regex, but do not.. Part 1</a></h1>
+					</div>
+					<div id="post-header-12" class="post-header">
+						<div id="post-author-12" class="post-author">
+							Author: <a href="http://neverfear.org/profile/ben">ben</a>
+						</div>
+						<div id="post-date-12" class="post-date">
+							Fri, 15th Feb 2008 06:44:51							
+						</div>
+						<div id="post-tags-12" class="post-tags">
+							Tags: <a href="http://neverfear.org/blog/tag/How-to/">How-to</a>, <a href="http://neverfear.org/blog/tag/Coding/">Coding</a>							
+						</div>
+												
+					</div>
+					
+					<!--
+					<div class="MemberAvatar_ben GenericAvatar"></div>
+					-->
+					
+					<div id="post-toc-12" class="post-toc"></div>
+					<!-- Including advert -->
+<div style="float: right; margin: 6px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-4627728740189107";
+/* 160x600, neverfear.org */
+google_ad_slot = "4194685306";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="./Regex Tutorial Part 1_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+					
+					<div id="post-content-12" class="post-content">
+						<p><a href="http://neverfear.org/blog/view/12/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_1">Part 1</a> | <a href="http://neverfear.org/blog/view/14/Regex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_2">Part 2</a></p>
+
+<p>Regular expressions are very useful. If you have to deal with text at all, you will find them indispensable. In programming, they can be used to verify user input (e.g check an email is valid), sanitize input (make sure the user only used allowed characters), remove sections of the string (remove all non-alpha-numeric characters). And not just for programming! You can use regular expressions in many text editors to edit the current file. You can use them in the grep command to find very specific lines, or in the sed "stream editor" to edit out bits of a file..</p>
+
+<p>As you can tell from the previous paragraph, they are very versatile. Most implementations are more or less compatible with the Perl regex syntax, so this is what the guide is about</p>
+
+<h1>Ohno, scary line-noise</h1>
+
+<p>Regular Expressions (regex for short) are really very simple.. They may look <a href="http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html">horrendous</a>, but they are essentially variations of the following:</p>
+
+<pre class="text" style="font-family:monospace;">[set of characters]{number of characters to match}</pre>
+
+<p>For example, <code>[a-z]{2}</code> will match two letters, from a-z.</p>
+
+<p>In the previous <code>[a-z]</code> is the characters to look for, <code>{2}</code> is how many characters to match.</p>
+
+<p>..that's it! Regular expressions have a really basic syntax, they just look like the result of someone kicking their keyboard for a while.</p>
+
+<h1>Matching letters</h1>
+
+<h2>Character sets</h2>
+
+<p>Now, lets say you would to match more than just a-z. Maybe upper case, numbers, and a question-mark.. Easy:</p>
+
+<pre class="text" style="font-family:monospace;">[a-zA-Z0-9?]{2}</pre>
+
+<p>You can add different ranges or characters to the <code>[ ]</code> character-class.</p>
+
+<p>But.. say you want to match the ] symbol too! If you have any experience programming, you could probably guess - you escape the symbol with a backslash:</p>
+
+<pre class="text" style="font-family:monospace;">[a-z]{2}</pre>
+
+<p>The symbols you will almost always have to escape (as they have other meanings in regexs) are: . + * [ ]  ( ) ^ $  and possibly a space.</p>
+
+<h2>Strings</h2>
+
+<p>Something I should defiantly point out - you don't have to use character classes to match letters - you can match a normal string of letters very easily:</p>
+
+<pre class="text" style="font-family:monospace;">some thing[!]{1,5}</pre>
+
+<p>That will match "some thing" followed by one to five exclamation marks. Just remember to escape anything like <code>[ ] *</code> etc</p>
+
+<h2>Shortcuts</h2>
+
+<p>Instead of typing every possible range of letters and symbols, the decimal-point can refer to "any single character". For example, to match any 5 characters:</p>
+
+<pre class="text" style="font-family:monospace;">.{5}</pre>
+
+<p>There are also other "shortcuts" you can use inside [ ] sets, such as:</p>
+
+<ul>
+<li><code>A</code> is the same as [a-zA-Z]</li>
+<li><code>S</code> will match white-space (spaces and tabs)</li>
+<li><code>w</code> matches alpha-numeric (a-zA-Z0-9 plus underscore)</li>
+<li>Upper-case <code>W</code> matches non-word characters (opposite of above)</li>
+<li><code>d</code> matches numbers</li>
+<li><code>D</code> matches non-numbers</li>
+</ul>
+
+<p>There are plenty more, but those are the most useful I find. To see the complete list, the best place is probably the <a href="http://perldoc.perl.org/perlre.html">Perl Regex doc-page</a>, as many languages implement "Perl-compatible regex" (PHP, Ruby and Python all do)</p>
+
+<p>These can be combined into character classes. Say you want to match spaces and tabs, and question marks:</p>
+
+<pre class="text" style="font-family:monospace;">[S?]{1,10}</pre>
+
+<p>You just shove them in with the other characters and ranges.</p>
+
+<p>I generally find I use the dot "any characters", and character classes most often.</p>
+
+<h1>Number of characters</h1>
+
+<p>Now I've covered character sets (the things enclosed in [ ], remember?), the next important bit is the number of characters to match. For these examples, I will just match lower-case a-z.</p>
+
+<p>There are a few different wildcard matchers, mainly ? * and +</p>
+
+<p><code>?</code> matches one or zero characters. The <code>?</code> quantifier is often useful for matching a "optional character", like a trailing slash, or a trailing "s":</p>
+
+<pre class="text" style="font-family:monospace;">some thing[s]?</pre>
+
+<p>That will match both "some thing" and "some things"</p>
+
+<p>And the two most useful:</p>
+
+<p>To match one or more of a symbol:</p>
+
+<pre class="text" style="font-family:monospace;">[a-z]+</pre>
+
+<p>And match zero or more:</p>
+
+<pre class="text" style="font-family:monospace;">[a-z]*</pre>
+
+<p>Say I wanted to match any exclamation marks in a string, and if any are found, remove them:</p>
+
+<pre class="text" style="font-family:monospace;">[!]*</pre>
+
+<p>You would use your languages Regex substitute function to replace any matches with ""</p>
+
+<p>But, say I want to check if the user has used any exclamation marks in their post, and if it matches, we yell at them to not:</p>
+
+<pre class="text" style="font-family:monospace;">[!]+</pre>
+
+<p>Unlike using *, it won't match if there are no !s</p>
+
+<h1>Groups</h1>
+
+<p>Groups are very very useful for extracting bits of a string. Basically you enclose a section of the regex in brackets. Then, depending on how the language deals with them, you can get the contents of these groups as variables.</p>
+
+<p>Say I have a string "Viewing: |Some title|". I want to grab the title, without the "Viewing: ||" bit:</p>
+
+<pre class="text" style="font-family:monospace;">Viewing: |([a-zA-Z ]*)|</pre>
+
+<p>I just wrote that, and already it's hard for me to read.. But I know it will work!  Regular expressions are far easier to write than they are to read..</p>
+
+<p>But, basically I typed in the string "Viewing:", escaping the two |'s</p>
+
+<pre class="text" style="font-family:monospace;">Viewing: ||</pre>
+
+<p>next, I matched zero or more [a-zA-Z ], inside the two | symbols.</p>
+
+<pre class="text" style="font-family:monospace;">Viewing: | [a-zA-Z ]* |</pre>
+
+<p>And finally, so I can grab the title, I put the [a-zA-Z ]* inside a group</p>
+
+<pre class="text" style="font-family:monospace;">Viewing: | ( [a-zA-Z ]* ) |</pre>
+
+<p><em>(Note:Spaces added to improve readability, if you want to have spaces in the regex, your best bet is to escape them using backslashes)</em></p>
+
+<h1>That's about it</h1>
+
+<p>Using the above (if you can make sense of it), you can do a <em>lot</em> with regular expressions.</p>
+
+<p>The second part of this little guide will give some practical examples on using regex, and I'll also show how to use them in various languages, so bookmark the site, subscribe to the RSS feed by clicking that orange icon in the address bar (or via the <a href="http://neverfear.org/weblog.rss">Feed URL</a>), or join the <a href="irc://irc.neverfear.org:7777/neverfear">IRC channel</a></p>
+					</div>
+					
+										
+					<div class="share-social-media">
+
+
+
+	<span class="share-facebook">
+		<a title="Share link on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F12%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_1&t=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%201"><img src="./Regex Tutorial Part 1_files/shareFacebook_32x32.png" alt="Share link on Facebook" title="Share link on Facebook" border="0"></a>
+	</span>
+	<span class="share-twitter">
+		<a title="Share link on Twitter" target="_blank" href="http://twitter.com/home?status=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%201:%20http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F12%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_1"><img src="./Regex Tutorial Part 1_files/shareTwitter_32x32.png" alt="Share link on Twitter" title="Share link on Twitter" border="0"></a>
+	</span>
+	<span class="share-digg">
+		<a title="Share link on Digg" target="_blank" href="http://digg.com/submit?url=http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F12%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_1&title=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%201"><img src="./Regex Tutorial Part 1_files/shareDigg_32x32.png" alt="Share link on Digg" title="Share link on Digg" border="0"></a>
+	</span>
+	<span class="share-buzz">
+		<a title="Share link on Yahoo Buzz" target="_blank" href="http://buzz.yahoo.com/buzz?targetUrl=http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F12%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_1&headline=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%201&summary=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%201"><img src="./Regex Tutorial Part 1_files/shareBuzz_32x32.png" alt="Share link on Yahoo Buzz" title="Share link on Yahoo Buzz" border="0"></a>
+	</span>
+	
+</div>
+					
+					<div id="post-comments-footer-12" class="post-comments-footer">
+						<a href="http://neverfear.org/blog/view/12/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_1/comments">There are 10 comments on this post.</a>
+						<a href="http://neverfear.org/blog/view/12/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_1/comments#new"><img src="./Regex Tutorial Part 1_files/comment_new.png" alt="" title="Make a new comment">Make a comment</a>.
+					
+					</div>
+				</div>
+				<script language="Javascript" type="text/javascript">
+				SetAdjustedPostTime("post-date-12", 1203057891);
+				SetAdjustedPostTime("post-date-last-edited-12", 1250185933);
+				</script>
+				
+				<!--<hr/>-->
+
+				</div> <!-- /page-content -->
+				<div id="footnote">
+											
+						<a href="http://neverfear.org/irc/">IRC</a>
+												
+						<a href="http://neverfear.org/rss/">RSS</a>
+											
+				</div> <!-- /footnote -->
+			</div> <!-- /page-body -->
+			<div id="bottom-strip"></div>
+		</div> <!-- /page -->
+		
+		<div id="poweredby">
+			<div id="poweredby-top-strip"></div>
+			Powered by Debian, Jack Daniels, Guinness, and excessive quantities of caffeine and sugar.
+		</div> <!-- /poweredby -->
+		
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Regex Tutorial Part 1_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10119883-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+	
+
+<!-- Generated in 0.00061299999999997 -->
+<!-- Output was cached -->
+</body></html>

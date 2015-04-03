@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)http://stackoverflow.com/questions/4736/learning-regular-expressions -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>regex - Learning Regular Expressions - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=6cd6089ee7f6">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=ea71a5211a91">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Learning Regular Expressions">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I don&#39;t really understand regular expressions.  Can you explain them to me in an easy-to-follow manner?  If there are any online tools or books, could you also link to them?
+">
+    <meta property="og:url" content="http://stackoverflow.com/questions/4736/learning-regular-expressions">
+    <link rel="canonical" href="./Learning Regex_files/Learning Regex.html">
+
+    
+    
+    <script type="text/javascript" async="" src="./Learning Regex_files/ados"></script><script async="" src="./Learning Regex_files/quant.js"></script><script async="" src="./Learning Regex_files/beacon.js"></script><script async="" src="./Learning Regex_files/analytics.js"></script><script type="text/javascript" async="" src="./Learning Regex_files/ados.js"></script><script src="./Learning Regex_files/jquery.min.js"></script>
+    <script src="./Learning Regex_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Learning Regex_files/all.css">
+    
+    <meta name="twitter:app:country" content="US">
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:iphone" content="871299723">
+    <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/4736/learning-regular-expressions">
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:ipad" content="871299723">
+    <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/4736/learning-regular-expressions">
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+    <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/4736/learning-regular-expressions">
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({votesCast:[],autoShowCommentHelp:true,showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:4736});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '4736');
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+        });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1428102561,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"28dca784fab45c8d4fa2b81436f6b987","isRegistered":true,"userType":3,"userId":4132491,"accountId":5160706,"gravatar":"<div class=\"gravatar-wrapper-32\"><img src=\"https://www.gravatar.com/avatar/91b3e4069118feb97fbef51065614627?s=32&d=identicon&r=PG&f=1\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"http://stackoverflow.com/users/4132491/derek-wu","notificationsUnviewedCount":0,"inboxUnviewedCount":0}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"a01c3030569e","js/moderator.en.js":"9be321ee4fdc","js/full-anon.en.js":"0e605e6101e2","js/full.en.js":"d86f58802e92","js/wmd.en.js":"89e46762f17e","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"a2341f691d0d","js/help.en.js":"637a173e1aa4","js/tageditor.en.js":"3f818f06656a","js/tageditornew.en.js":"f9c5a11452c0","js/inline-tag-editing.en.js":"f53885bdadce","js/revisions.en.js":"6c7265ea9fa1","js/review.en.js":"1305a2469a54","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"23eb1e4c85da","js/explore-qlist.en.js":"257ba4cb7b04","js/events.en.js":"588492b46561","js/keyboard-shortcuts.en.js":"77412b2bfcc4","js/external-editor.en.js":"333f2972598f","js/external-editor.en.js":"333f2972598f","js/snippet-javascript.en.js":"d4699d4cc44f","js/snippet-javascript-codemirror.en.js":"5407f517dfab"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+    
+    
+<script async="" src="./Learning Regex_files/full.en.js"></script><script async="" src="./Learning Regex_files/snippet-javascript.en.js"></script><script async="" src="./Learning Regex_files/post-validation.en.js"></script><script type="text/javascript" src="./Learning Regex_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link type="text/css" rel="stylesheet" href="./Learning Regex_files/jobs.min.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./Learning Regex_files/Learning Regex.html" class="question-hyperlink">Learning Regular Expressions [closed]</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="4736" id="question">
+
+        <input type="hidden" id="4736-only-allow-inform-moderator-flagging" value="true">
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1079410826",4).setZone(43) ; });                    
+            </script>
+            <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="4736">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">166</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/4736/learning-regular-expressions#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>216</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I don't really understand regular expressions.  Can you explain them to me in an easy-to-follow manner?  If there are any online tools or books, could you also link to them?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/regex" class="post-tag js-gps-track" title="show questions tagged &#39;regex&#39;" rel="tag">regex</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/4736/4132491" title="short permalink to this question" class="short-link" id="link-post-4736">share</a><span class="lsep">|</span><span class="disabled-link" title="Post is locked.">edit</span></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/4736/revisions" title="show all edits to this post">edited <span title="2015-01-07 14:39:54Z" class="relativetime">Jan 7 at 14:39</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature">
+        <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Nov 11 &#39;10 at 17:31. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-4736" href="http://stackoverflow.com/posts/4736/revisions" title="show revision history for this post">
+        5 revs, 4 users 67%<br></a><a href="http://stackoverflow.com/users/1384652">Teifion</a>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+        
+            <tr>
+            <td class="special-status" colspan="2">
+                <div class="question-status">
+        <h2>                    <b>locked</b> by <a href="http://stackoverflow.com/users/16587/george-stocker">George Stocker</a><span class="mod-flair" title="moderator">♦</span> <span dir="ltr"><span title="2015-01-07 14:34:36Z" class="relativetime">Jan 7 at 14:34</span></span>
+</h2>
+        <p>This question's answers are a collaborative effort: if you see something that can be improved, just edit the answer to improve it! <i>No additional answers can be added here</i></p>
+    </div>
+    <div class="question-status">
+        <h2>                    <b>closed</b> as not constructive by <a href="http://stackoverflow.com/users/50776/casperone">casperOne</a><span class="mod-flair" title="moderator">♦</span> <span dir="ltr"><span title="2011-11-28 18:56:46Z" class="relativetime">Nov 28 '11 at 18:56</span></span>
+</h2>
+        <p>As it currently stands, this question is not a good fit for our Q&amp;A format. We expect answers to be supported by facts, references,   or expertise, but this question will likely solicit debate, arguments, polling, or extended discussion. If you feel that this question   can be improved and possibly reopened, <a href="http://stackoverflow.com/help/reopen-questions">visit the help center</a> for guidance.<span class="close-status-suffix">
+If this question can be reworded to fit the rules in the <a href="http://stackoverflow.com/help/closed-questions">help center</a>, please <a href="http://stackoverflow.com/posts/4736/edit">edit the question</a>.</span></p>
+    </div>
+            </td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4736" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="false" data-comments-unavailable="true" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4736" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">comments disabled on deleted / locked posts / reviews</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/4736/learning-regular-expressions#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/4736/learning-regular-expressions?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/4736/learning-regular-expressions?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/4736/learning-regular-expressions?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="2759417"></a>
+<div id="answer-2759417" class="answer" data-answerid="2759417" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="2759417">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">307</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The most important part is the concepts. Once you understand how the building blocks work, differences in syntax amount to little more than mild dialects. A layer on top of your regular expression engine's syntax is the syntax of the programming language you're using. Languages such as Perl remove most of this complication, but you'll have to keep in mind other considerations if you're using regular expressions in a C program.</p>
+
+<p>If you think of regular expressions as building blocks that you can mix and match as you please, it helps you learn how to write and debug your own patterns but also how to understand patterns written by others.</p>
+
+<h2>Start simple</h2>
+
+<p>Conceptually, the simplest regular expressions are literal characters. The pattern <code>N</code> matches the character 'N'.</p>
+
+<p>Regular expressions next to each other match sequences. For example, the pattern <code>Nick</code> matches the sequence 'N' followed by 'i' followed by 'c' followed by 'k'.</p>
+
+<p>If you've ever used <code>grep</code> on Unix—even if only to search for ordinary looking strings—you've already been using regular expressions! (The <code>re</code> in <code>grep</code> refers to regular expressions.)</p>
+
+<h2>Order from the menu</h2>
+
+<p>Adding just a little complexity, you can match either 'Nick' or 'nick' with the pattern <code>[Nn]ick</code>. The part in square brackets is a <em>character class</em>, which means it matches exactly one of the enclosed characters. You can also use ranges in character classes, so <code>[a-c]</code> matches either 'a' or 'b' or 'c'.</p>
+
+<p>The pattern <code>.</code> is special: rather than matching a literal dot only, it matches <em>any</em> character<sup>†</sup>. It's the same conceptually as the really big character class <code>[-.?+%$A-Za-z0-9...]</code>.</p>
+
+<p>Think of character classes as menus: pick just one.</p>
+
+<h2>Helpful shortcuts</h2>
+
+<p>Using <code>.</code> can save you lots of typing, and there are other shortcuts for common patterns. Say you want to match non-negative integers: one way to write that is <code>[0-9]+</code>. Digits are a frequent match target, so you could instead use <code>\d+</code> match non-negative integers. Others are <code>\s</code> (whitespace) and <code>\w</code> (word characters: alphanumerics or underscore).</p>
+
+<p>The uppercased variants are their complements, so <code>\S</code> matches any <em>non</em>-whitespace character, for example.</p>
+
+<h2>Once is not enough</h2>
+
+<p>From there, you can repeat parts of your pattern with <em>quantifiers</em>. For example, the pattern <code>ab?c</code> matches 'abc' or 'ac' because the <code>?</code> quantifier makes the subpattern it modifies optional. Other quantifiers are</p>
+
+<ul>
+<li><code>*</code> (zero or more times)</li>
+<li><code>+</code> (one or more times)</li>
+<li><code>{n}</code> (exactly <em>n</em> times)</li>
+<li><code>{n,}</code> (at least <em>n</em> times)</li>
+<li><code>{n,m}</code> (at least <em>n</em> times but no more than <em>m</em> times)</li>
+</ul>
+
+<p>Putting some of these blocks together, the pattern <code>[Nn]*ick</code> matches all of</p>
+
+<ul>
+<li>ick</li>
+<li>Nick</li>
+<li>nick</li>
+<li>Nnick</li>
+<li>nNick</li>
+<li>nnick</li>
+<li><em>(and so on)</em></li>
+</ul>
+
+<p>The first match demonstrates an important lesson: <em><code>*</code> always succeeds!</em> Any pattern can match zero times.</p>
+
+<h2>Grouping</h2>
+
+<p>A quantifier modifies the pattern to its immediate left. You might expect <code>0abc+0</code> to match '0abc0', '0abcabc0', and so forth, but the pattern <em>immediately</em> to the left of the plus quantifier is <code>c</code>. This means <code>0abc+0</code> matches '0abc0', '0abcc0', '0abccc0', and so on.</p>
+
+<p>To match one or more sequences of 'abc' with zeros on the ends, use <code>0(abc)+0</code>. The parentheses denote a subpattern that can be quantified as a unit. It's also common for regular expression engines to save or "capture" the portion of the input text that matches a parenthesized group. Extracting bits this way is much more flexible and less error-prone than counting indices and <code>substr</code>.</p>
+
+<h2>Alternation</h2>
+
+<p>Earlier, we saw one way to match either 'Nick' or 'nick'. Another is with alternation as in <code>Nick|nick</code>. Remember that alternation includes everything to its left and everything to its right. Use grouping parentheses to limit the scope of <code>|</code>, <em>e.g.</em>, <code>(Nick|nick)</code>.</p>
+
+<p>For another example, you could equivalently write <code>[a-c]</code> as <code>a|b|c</code>, but this is likely to be suboptimal because many implementations assume alternatives will have lengths greater than 1.</p>
+
+<h2>Escaping</h2>
+
+<p>Although some characters match themselves, others have special meanings. The pattern <code>\d+</code> doesn't match backslash followed by lowercase D followed by a plus sign: to get that, we'd use <code>\\d\+</code>. A backslash removes the special meaning from the following character.</p>
+
+<h2>Greediness</h2>
+
+<p>Regular expression quantifiers are greedy. This means they match as much text as they possibly can while allowing the entire pattern to match successfully.</p>
+
+<p>For example, say the input is</p>
+
+<blockquote>
+  <p>"Hello," she said, "How are you?"</p>
+</blockquote>
+
+<p>You might expect <code>".+"</code> to match only 'Hello,' and will then be surprised when you see that it matched from 'Hello' all the way through 'you?'.</p>
+
+<p>To switch from greedy to what you might think of as cautious, add an extra <code>?</code> to the quantifier. Now you understand how <code>\((.+?)\)</code>, the example from your question works. It matches the sequence of a literal left-parenthesis, followed by one or more characters, and terminated by a right-parenthesis.</p>
+
+<p>If your input is '(123) (456)', then the first capture will be '123'. Non-greedy quantifiers want to allow the rest of the pattern to start matching as soon as possible.</p>
+
+<p>(As to your confusion, I don't know of any regular-expression dialect where <code>((.+?))</code> would do the same thing. I suspect something got lost in transmission somewhere along the way.)</p>
+
+<h2>Anchors</h2>
+
+<p>Use the special pattern <code>^</code> to match only at the beginning of your input and <code>$</code> to match only at the end. Making "bookends" with your patterns where you say, "I know what's at the front and back, but give me everything between" is a useful technique.</p>
+
+<p>Say you want to match comments of the form</p>
+
+<blockquote>
+  <p><code>-- This is a comment --</code></p>
+</blockquote>
+
+<p>you'd write <code>^--\s+(.+)\s+--$</code>.</p>
+
+<h2>Build your own</h2>
+
+<p>Regular expressions are recursive, so now that you understand these basic rules, you can combine them however you like.</p>
+
+<h2>Tools for writing and debugging regexes:</h2>
+
+<ul>
+<li><a href="http://www.regexr.com/">RegExr</a> (for JavaScript)</li>
+<li>Perl: <a href="http://search.cpan.org/dist/YAPE-Regex-Explain/">YAPE: Regex Explain</a></li>
+<li><a href="http://weitz.de/regex-coach/">Regex Coach</a> (engine backed by <a href="http://weitz.de/cl-ppcre/">CL-PPCRE</a>)</li>
+<li><a href="http://regexpal.com/">RegexPal</a> (for JavaScript)</li>
+<li><a href="http://www.regular-expressions.info/">Regular Expressions Online Tester</a> </li>
+<li><a href="http://www.regexbuddy.com/">Regex Buddy</a></li>
+<li><a href="http://www.regex101.com/">Regex 101</a> (for PCRE, JavaScript, Python)</li>
+<li><a href="http://laurent.riesterer.free.fr/regexp/">Visual RegExp</a></li>
+<li><a href="http://www.ultrapico.com/Expresso.htm">Expresso</a> (for .NET)</li>
+<li><a href="http://www.rubular.com/">Rubular</a> (for Ruby)</li>
+<li><a href="http://regexlib.com/Default.aspx">Regular Expression Library</a> (Predefined Regexes for common scenarios)</li>
+<li><a href="http://www.txt2re.com/">Txt2RE</a></li>
+<li><a href="http://www.regextester.com/">Regex Tester</a> (for JavaScript)</li>
+</ul>
+
+<h2>Books</h2>
+
+<ul>
+<li><a href="http://oreilly.com/catalog/9780596528126/">Mastering Regular Expressions</a> and the <a href="http://oreilly.com/catalog/9780596002893">2nd Edition</a></li>
+<li><a href="http://www.addedbytes.com/cheat-sheets/regular-expressions-cheat-sheet/">Regular Expressions Cheat Sheet</a></li>
+<li><a href="http://rads.stackoverflow.com/amzn/click/0596520689">Regex Cookbook</a></li>
+<li><a href="http://rads.stackoverflow.com/amzn/click/0672325667">Teach Yourself Regular Expressions</a></li>
+</ul>
+
+<h2>Free resources</h2>
+
+<ul>
+<li><a href="http://neverfear.org/blog/view/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_1">Regular Expressions - Everything you should know</a> (PDF Series)</li>
+<li><a href="http://www.greenend.org.uk/rjk/2002/06/regexp.html">Regex Syntax Summary</a></li>
+<li><a href="http://perl.plover.com/Regex/">How Regexes Work</a></li>
+</ul>
+
+<h2>Footnote</h2>
+
+<p><strong>†:</strong> The statement above that <code>.</code> matches any character is a simplification for pedagogical purposes that is not strictly true. Dot matches any character except newline, <code>"\n"</code>, but in practice you rarely expect a pattern such as <code>.+</code> to cross a newline boundary. Perl regexes have a <a href="http://perldoc.perl.org/perlre.html#s"><code>/s</code> switch</a> and Java <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html#DOTALL"><code>Pattern.DOTALL</code></a>, for example, to make <code>.</code> match any character at all. For languages that don't have such a feature, you can use something like <code>[\s\S]</code> to match "any whitespace or any non-whitespace", in other words anything.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/2759417/4132491" title="short permalink to this answer" class="short-link" id="link-post-2759417">share</a><span class="lsep">|</span><span class="disabled-link" title="Question is locked.">edit</span></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/2759417/revisions" title="show all edits to this post">edited <span title="2015-01-28 04:42:16Z" class="relativetime">Jan 28 at 4:42</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Nov 11 &#39;10 at 17:31. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-2759417" href="http://stackoverflow.com/posts/2759417/revisions" title="show revision history for this post">
+        7 revs, 6 users 72%<br></a><a href="http://stackoverflow.com/users/123109">Greg Bacon</a>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2759417" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2759417" data-rep="50" data-reg="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/4736/learning-regular-expressions#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/regex" class="post-tag" title="show questions tagged &#39;regex&#39;" rel="tag">regex</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+
+
+
+<script>
+    window.showNewUser = false;
+
+</script>
+
+<div class="module newuser newuser-greeting" id="newuser-box" style="display:none;">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p><p>Got a question about the site itself? <a href="http://meta.stackoverflow.com/">meta</a> is the place to talk about things like what questions are appropriate, what tags we should use, etc.</p>
+        <p class="ar">
+                <a href="http://stackoverflow.com/tour?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;
+            <a href="http://stackoverflow.com/help?mnu=1">help »</a>
+                &nbsp; <a href="http://meta.stackoverflow.com/">meta »</a>
+        </p>
+    </div>
+</div>
+    <script>
+    if (showNewUser) {
+        document.getElementById('newuser-box').style.display = '';
+    }
+    </script>						
+		<script>
+StackExchange.ready(function(){$.get('/posts/4736/ivc/9d39');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/4736/ivc/9d39" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('regex,x-user-registered');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        ga('set', 'dimension1', '5160706');         
+        ga('set', 'dimension2', '|regex|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>                
+    
+<script type="text/javascript" src="./Learning Regex_files/p"></script></body></html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0099)http://neverfear.org/blog/view/14/Regex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>NEVERFEAR.org - Regex tutorial for people who should know Regex, but do not.. Part 2</title>
+		<link rel="stylesheet" href="http://neverfear.org/style.css">
+		<link rel="stylesheet" href="http://neverfear.org/members.css">
+		<link rel="stylesheet" href="http://neverfear.org/markdown/geshi.css">
+		<link rel="alternate" type="application/rss+xml" title="Weblog RSS feed" href="http://neverfear.org/rss/weblog/">
+		<link rel="alternate" type="application/rss+xml" title="Weblog RSS feed for post comments" href="http://neverfear.org/rss/comments/">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="http://neverfear.org/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="http://neverfear.org/favicon.ico">
+		<script async="" type="text/javascript" src="./Regex Tutorial Part 2_files/ca-pub-4627728740189107.js"></script><script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 2_files/ticktock.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 2_files/browser.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 2_files/toc.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Regex Tutorial Part 2_files/xmlhttp.js"></script>
+		<meta name="description" content="A software programming and technology community."> 
+		<meta name="keywords" content="C,Python,PHP,Lisp,Scheme,DSSSL,XML,XSLT,PIC,ICMP,TCP,IP,HTML,CSS,Microcode,Cryptography,Development,Technology,Source code,JavaScript,JavaScript canvas element,How-to,IRC,MySQL,tvnamer,Git,Ascii,GPG,Geeks,Nerds,Programmers,Developers,Telephony">
+	</head>
+	<body onload="DoClockTick(&#39;time&#39;); CheckBrowser();">
+		
+		<div id="page">
+			
+			<div id="banner">
+				<table id="banner-table">
+					<tbody><tr>
+						<td id="rss-container">
+							<a href="http://neverfear.org/rss/weblog/" id="rss-link" class="rss"><img alt="RSS" title="RSS Feed" src="./Regex Tutorial Part 2_files/rssorange.png" class="rss-icon"></a>
+						</td> <!-- /rss-container -->
+					</tr>
+				</tbody></table> <!-- /banner-table -->
+			</div> <!-- /banner -->
+		
+			<div id="page-body">
+			
+				<div id="navigation">
+					<a href="http://neverfear.org/blog/">Weblog</a> <a href="http://neverfear.org/archive/">Article Index</a> <a href="http://neverfear.org/search/">Search</a> <a href="http://neverfear.org/members/list/">Members</a> <a href="http://twitter.com/NeverfearOrg">Twitter</a> <a href="http://neverfear.org/rss/">RSS</a> <a href="http://neverfear.org/login/">Login</a> 					
+				</div> <!-- /navigation -->
+	               		
+				<div id="associates">
+					See also: <a href="http://imagepaste.nullnetwork.net/">Image paste bin</a> <a href="http://wol.nullnetwork.net/">Wake-On-Lan client</a> <a href="http://cork.nullnetwork.net/">Corkboard</a> 				</div>
+				 
+				<div id="page-content">
+	
+	
+				<div id="post-container-14" class="post-container">
+					<div id="post-title-14" class="post-title">
+						<h1><a href="./Regex Tutorial Part 2_files/Regex Tutorial Part 2.html" id="post-title-link-14" class="post-title-link">Regex tutorial for people who should know Regex, but do not.. Part 2</a></h1>
+					</div>
+					<div id="post-header-14" class="post-header">
+						<div id="post-author-14" class="post-author">
+							Author: <a href="http://neverfear.org/profile/ben">ben</a>
+						</div>
+						<div id="post-date-14" class="post-date">
+							Mon, 18th Feb 2008 11:31:25							
+						</div>
+						<div id="post-tags-14" class="post-tags">
+							Tags: <a href="http://neverfear.org/blog/tag/How-to/">How-to</a>, <a href="http://neverfear.org/blog/tag/Coding/">Coding</a>							
+						</div>
+												
+					</div>
+					
+					<!--
+					<div class="MemberAvatar_ben GenericAvatar"></div>
+					-->
+					
+					<div id="post-toc-14" class="post-toc"></div>
+					<!-- Including advert -->
+<div style="float: right; margin: 6px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-4627728740189107";
+/* 160x600, neverfear.org */
+google_ad_slot = "4194685306";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="./Regex Tutorial Part 2_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+					
+					<div id="post-content-14" class="post-content">
+						<p><a href="http://neverfear.org/blog/view/12/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_1">Part 1</a> | <a href="./Regex Tutorial Part 2_files/Regex Tutorial Part 2.html">Part 2</a></p>
+
+<p>You can download the following article as a nicely formatted PDF at the following URL:
+<a href="http://neverfear.org/files/download/25">http://neverfear.org/files/download/25</a></p>
+
+<h2>Intro</h2>
+
+<p>This is the second part of the catchily named Regex-for-people-who-should-know-regex-but-do-not guide. If you are unfamiliar with the basics of regular expression syntax, then I recommend you first read part 1, or any of the many regular expressions primers available online.</p>
+
+<p>In this part of the guide, I am first going to cover practical examples of regular expressions, such as how to extract a segment of text from a string, and how to validate user-input. Finally, I am going to cover how to use regex within various languages; how to do regex matching, extraction and substitution within Perl, Ruby, Python, PHP and Javascript.</p>
+
+<p>These examples are going to mainly focus on processing HTML, but remember, HTML is just specifically formatted text. As I keep saying, regular expressions are very flexible - what you learn in this guide can be applied to a myriad of things - from editing files to data-mining, input validation to finding files.
+If you are dealing with text (be it code, HTML, file names), chances are regex can help you in some way.</p>
+
+<p>If you don't understand a bit of the article, don't worry - just read past and come back to it later. Learning regular-expressions is just like learning a new language, you start of learning some basics, then learn some more advanced bits. As you learn more advanced bits, the simple bits make more sense. As with all languages, the more you use them, the more familiar you become - think up some projects that could use regular expressions, and get coding.</p>
+
+<h1>Practical examples</h1>
+
+<p>To actually see why regular expressions are so useful, you really have to have a reason to use them. Since regexs are so flexible, there are many different ways they can be used.</p>
+
+<p>I'm going to cover what I use them for most: validating input, cleaning up input, and extracting segments from a string.</p>
+
+<h2>Validating form input</h2>
+
+<p>This can be a rather complicated matter - "k" in the comments on the previous article corrected pointed out that there was far more to validating an email than just</p>
+
+<pre class="text" style="font-family:monospace;">w+@w+.w+</pre>
+
+<p>Look at the full regular expression to validate an email: <a href="http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html">http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html</a> - and even that isn't perfect!</p>
+
+<p>Depending on what you want or need, validation can be very complicated, but since we have to start somewhere, we'll start with something simple - a name field on a web form.</p>
+
+<p>For this example, we are only going to deal with "Western" names - we won't worry about dealing with Japanese glyphs and other scary-looking-Foreign characters.</p>
+
+<p>First, we need to think what users might want to enter in this field. Secondly we need to think what evil shifty-eyed people might like to put in to break the site.</p>
+
+<h3>What users want.</h3>
+
+<p>Most usernames contain letters (upper and lower case), numbers, hyphens and underscores. If that was all we wanted, we could get away with the following regex:</p>
+
+<pre class="text" style="font-family:monospace;">[w-]+</pre>
+
+<p>If you remember from the previous guide, w is a shortcut for alphanumeric plus underscores. Since we want hyphens too, we added that to the character class.
+If we don't trust shortcuts, we could have written it with ranges instead:</p>
+
+<pre class="text" style="font-family:monospace;">[a-zA-Z0-9_-]+</pre>
+
+<p>I tend to use the latter style - I find it easier to know what I'm matching. w isn't terribly memorable. It's a little more verbose, and I never trusted all languages to have the same shortcuts, so I have stuck to using ranges of characters.
+When you first write a regex to validate input, you have to start thinking of all validate input it could invalidate. The first thing that springs to mind is spaces. In the comments on the previous article, quite a few people used "Firstname Lastname" - perfectly valid input, but wouldn't pass the previous regex. Easily fixed, just add a space to the character-class:</p>
+
+<pre class="text" style="font-family:monospace;">[a-zA-Z0-9-_ ]+</pre>
+
+<p>I have used an escaped-space instead of s because I don't want to allow tabs. Also, some regex implementations don't require you to escape the space, others do.
+For example, Python regex compiled with the re.VERBOSE flag will ignore whitespace and line-breaks; if you want to match a space, you either escape the space, or use s.
+Personally, I escape spaces them most of the time (since it works whether it ignores spaces or not), and I find it easier to spot where I want to match spaces.</p>
+
+<p>Great, now we have a regex we can validate user input.. But not until we consider what evil people might put in to the field to break things..</p>
+
+<h3>What evil people want: SQL injections</h3>
+
+<p>There are two big problems when it comes to user-submitted data, which is going to be displayed on the site, SQL injections and Cross-site scripting attacks (XSS).</p>
+
+<p>SQL injections are basically badly validated user-input being append to an SQL query. I won't go into much detail about them here. The main cause of these are un-escaped  quotes in user-input. For example, here is a simple SQL query:</p>
+
+<pre class="text" style="font-family:monospace;">SELECT user_id FROM Students WHERE username='Robort'</pre>
+
+<p>Now, bob is what the user entered - but what if a user entered the following as a username:</p>
+
+<pre class="text" style="font-family:monospace;">Robort'); DROP TABLE Students;--</pre>
+
+<p>Bad things happen, if you don't validate their input.. The query turns into the following two queries:</p>
+
+<pre class="text" style="font-family:monospace;">SELECT user_id FROM Students WHERE username='Robort'); DROP TABLE Students;--'</pre>
+
+<p>If you're not familiar with SQL, basically that went from retrieving the ID of a supplied username, to retrieving the username and deleting every single student record.</p>
+
+<p>For more information, see the Wikipedia page on SQL injections: <a href="http://en.wikipedia.org/wiki/SQL_injection">http://en.wikipedia.org/wiki/SQL_injection</a></p>
+
+<p>So, how do we prevent this?
+In the case of out name-field we've prevented this by not allowing quotes, brackets or semicolons to every make it near the SQL query.
+What if we did need these symbols in the field? For example, quote marks are perfectly valid in a comment's text - I just used one as an apostrophe.
+We simply escape the quotes, by putting a backslash before them:</p>
+
+<pre class="text" style="font-family:monospace;">quote marks are perfectly valid in a comment's text</pre>
+
+<p>Most languages will have built in commands to escape quotes and such, and some database interfaces have this too - but what if our language doesn't have such a command or feature? Regex can do that!</p>
+
+<pre class="text" style="font-family:monospace;">s/'/\'/g</pre>
+
+<p>Looks rather horrible, but that's the syntax for a regex-substitution in Perl.
+The 's' says it's a substitution, then, between the first and second forward-slash is the pattern to look for, and between the second and last forward-slash is what to replace it with.
+In this case, we look for a single quote, and replace it with backslash followed by a single quote. We need two backslashes, a single backslash would escape the next character, two  gives a literal backslash.
+Finally, the 'g' is a modifier, that tells the regex to be applier to every occurrence of the quote, not just the first.
+If you use the above regex, you must first escape entered backslashes (  ), then single quotes ( ' ), double quotes ( " ) and backticks ( ` ). Be very careful and test thoroughly!</p>
+
+<h3>What evil people want 2: Cross-Site-Scripting Attacks</h3>
+
+<p>The second big problem is cross-site-scripting attacks. An XSS attack is injecting extra HTML onto a page.</p>
+
+<p>These attacks can range from slightly annoying (a Javascript alert saying "hah"), to having users accounts compromised.</p>
+
+<p>Typically these are Javascript <code>&lt;script&gt;&lt;/script&gt;</code> tag containing some code to take the users authentication cookie, and send it to the attacker - allowing them to log in as the user.
+There was a big XSS attack on Myspace, which acted as a worm - when someone viewed an "infected" profile page, it would submit a friend-request to it's creator, then add the XSS-code to the users profile. It ended up on over a million users profiles, all because the sites creators accidently allowed Javascript to be entered in one small part of the users profile! Read more about it on the creators website: <a href="http://namb.la/popular/">http://namb.la/popular/</a></p>
+
+<p>The problem is allowing angle-brackets (<code>&lt;</code> and <code>&gt;</code>), then displaying them back on the page without converting them to <code>&lt;</code> and <code>&gt;</code>
+If you don't this, they get interpreted as regular HTML. Using CSS, you can "deface" a website by creating a div, and making it float above the website. Using javascript you can redirect to another website, or steal the users cookie that automatically logs them in.</p>
+
+<p>As with SQL injections, most languages have functions to escape HTML entities, or alternatively you can achieve this with regular expressions:</p>
+
+<pre class="text" style="font-family:monospace;">s/&lt;/&lt;/g
+s/&gt;/&gt;/g</pre>
+
+<p>If you want to read more on XSS attacks, see the Wikipedia page: <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">http://en.wikipedia.org/wiki/Cross-site_scripting</a></p>
+
+<h3>Back to the name validation</h3>
+
+<p>So we know users cannot inject SQL into our query, as we are not allowing quotes in the input. Same with XSS injections, we are not allowing any characters that could be used to inject any extra HTML.</p>
+
+<p>There is one last problem that might come up - input length.
+Typically in your database, you have a VARCHAR row named "username" or similar, limited to around 30 characters. If the user inputs a 100 character name, it will get input happily, but it will be truncated with no warning.</p>
+
+<p>A 100 character name will be happily (and wrongly) be validated by our regex:</p>
+
+<pre class="text" style="font-family:monospace;">[a-zA-Z0-9-_ ]+</pre>
+
+<p>Remember, that plus symbol means one or more characters from this set of characters. That means we can have a million letter a's and will validate.
+We need to only allow one to thirty characters - the {1,30} quantifier seems perfect for this.</p>
+
+<pre class="text" style="font-family:monospace;">[a-zA-Z0-9-_ ]{1,30}</pre>
+
+<p>It now reads: 1-to-30 characters from this set. It will not validate if there are invalid characters, or if it is blank or too long.</p>
+
+<h3>Done yet?</h3>
+
+<p>We now have a fairly issue-free regular expression to validate the input from a "Your name" field on a web-form or other input, but there are still issues.</p>
+
+<p>A user could simply enter a single space, and it will be valid. This is not a desirable action.</p>
+
+<p>The best way to fix this would be to trim trailing spaces from the input, then run it through our regex. As with escaping quotes and HTML, many languages have such a trim() function, and again, we can do this in regular expressions:</p>
+
+<pre class="text" style="font-family:monospace;">s/s+$//</pre>
+
+<p>Substitute one or more spaces directly before the end of the string.</p>
+
+<p>The dollar sign ( $ ) means the end of the string, and the carat ( ^ ). To match the word "hi" at the start of a string only, you would do:</p>
+
+<pre class="text" style="font-family:monospace;">^hi</pre>
+
+<p>And at the end of a string:</p>
+
+<pre class="text" style="font-family:monospace;">hi$</pre>
+
+<p>And you can combine the two, for example to match only the word hi, with nothing else in the string:</p>
+
+<pre class="text" style="font-family:monospace;">^hi$</pre>
+
+<p>To match a sentence, starting with the word hi, and ending in bye:</p>
+
+<pre class="text" style="font-family:monospace;">^hi.*bye$</pre>
+
+<p>Those two symbols are very useful, and I really should have mentioned them earlier!
+So now if a user enters only spaces, they are all stripped away, making the input 0 characters long, so are invalidated by {1,30}</p>
+
+<p>So.. we're done? I'm afraid not! What if a user types 'a       b', that's valid, it's within [a-z ]{1,30}. Again, we deal with this the same way as the only-spaces problem: strip more than one space in a row, then run it though our main regex:</p>
+
+<pre class="text" style="font-family:monospace;">s/s{2,}/ /</pre>
+
+<p>This replaces two or more spaces with a single space.</p>
+
+<h3>Lets leave it at that..</h3>
+
+<p>As you can probably see, validation can get very complicated. Even a seemingly simple thing can have problems - either invalidating otherwise valid input, or allowing malicious data to be entered.</p>
+
+<p>Generally, it's best to err on the side of caution and limit the character set to a-zA-Z0-9, rather than accidently allowing the user to input extra commands or code into your site.</p>
+
+<p>Make sure you let users know what restrictions there are on inputs (For example, "Usernames must contain only upper or lower case letters, numbers, underscores and hyphens"), and instead of simply saying "Your form was filled in invalidly", remember to let users know what they did wrong (highlight the invalid field, remind them of the allowed characters)</p>
+
+<h2>Extracting text from a string</h2>
+
+<p>This is something I use constantly. Say you have a HTML file, and you wish to get all the URLs within the file. Without using regular expressions, you are stuck using a horrible temperamental mess of strpos(), substr() and such commands. With regular expressions, you can find all images in a single expression.</p>
+
+<pre class="text" style="font-family:monospace;">&lt;img.*? src="(.+?)".*?&gt;</pre>
+
+<p>Then you use your languages regex match-all function, and you will be presented with an array of all images.</p>
+
+<p>Hopefully by this point you can work out what most of that regex does. First we look for the string <code>&lt;img</code>, then look for the <code>src=""</code> attribute, grabbing the contents of it using a group (the match within the brackets), then we look for the closing tag.</p>
+
+<h3>Greedy Regexs</h3>
+
+<p>This is a good time to explain greedy/non-greedy matching. Greedy matching would be to simply do</p>
+
+<pre class="text" style="font-family:monospace;">&lt;img.* src=".+".*&gt;</pre>
+
+<p>While this might work work, it can behave very strangely when there are multiple double-quotes, or multiple tags.
+Trying to match &lt;.*&gt;  will find the first angle-bracket, and then the last one - this is greedy matching. While this behavior is sometimes desired, other times it can make the regex act strangely.
+What we want it to do is find the next closing-angle-bracket, so we use non-greedy matching:</p>
+
+<pre class="text" style="font-family:monospace;">&lt;.*?&gt;</pre>
+
+<p>The question mark after a quantifier indicates non-greedy matching:</p>
+
+<pre class="text" style="font-family:monospace;">.*?
+.+?
+.{1,4}?</pre>
+
+<p>There is another other way to do achieve non-greedy matching:</p>
+
+<pre class="text" style="font-family:monospace;">&lt; [^&gt;]+ &gt;</pre>
+
+<p>That looks for &lt;, then one or more characters that are not &gt;, and finally the &gt;
+For matching things like HTML tags, it is more reliable, and you don't have to worry about greedy/non-greedy quantifiers.</p>
+
+<p>So, our img-src grabbing regex updated to use my preferred [^&gt;]+ syntax</p>
+
+<pre class="text" style="font-family:monospace;">&lt;img.*? src="([^"]+)"[^&gt;]+&gt;</pre>
+
+<p>Like all regular expressions, this one has a problem - HTML can use either single or double quotes. We can use the alternation symbol, the vertical pipe ( | ), which you will be familiar with as the boolean OR in many programming languages.</p>
+
+<p>As a simple demonstration of alternation, I want to be able to match the word hi, or bye, followed by an exclamation mark or a question mark:</p>
+
+<pre class="text" style="font-family:monospace;">(hi|bye)[!?]{1}</pre>
+
+<p>That matches hi OR bye, followed by one character from a set of [!?]. It could be written using an alternation for the ! and ?, but to match a single character, it's far neater to use a character class and match one symbol (we can't use the ? as it matches 'zero or one'). You don't need to escape the ? within a character class, as it has no meaning there. Were we to use alternation, it would require escaping.</p>
+
+<p>To update our img-src grabbing regex to allow both single and double quotes</p>
+
+<pre class="text" style="font-family:monospace;">&lt;img.*? src=["']{1}([^"']+)["']{1}[^&gt;]+&gt;</pre>
+
+<p>I'm aware that looks horrible, but it was easy for me to write. You don't write a regular expression in a single go - you start with a basic match, and refine it as you notice problems. This is why reading or editing other users regular expressions is so difficult.</p>
+
+<h3>Groups</h3>
+
+<p>Now, somewhere amidst that line-noise is a group - a match enclosed in brackets. For the sake of readability, I'll revert back to the simpler looking regex (before we dealt with the single/double quote issue)</p>
+
+<pre class="text" style="font-family:monospace;">src="(.+?)"</pre>
+
+<p>This matches src=", then stores everything that matches .+  until the next " (if we use non-greedy matching!)</p>
+
+<p>This is best explained via an example:</p>
+
+<pre class="text" style="font-family:monospace;">Input:  &lt;img src="test.png" alt="Test picture"&gt;
+Regex:  &lt;img src="(.+?)" alt="(.+?)"&gt;
+Group 1:    test.png
+Group 2:    Test picture</pre>
+
+<p>I'm not even going to get into the problems with that regular expression! I will explain how to grab those groups in various languages in the next section, I've just one thing to explain, back-references.</p>
+
+<p>Back-references are one of the things I put off learning because they sounded scary - but just like regular expressions, they are easier than they seem.</p>
+
+<p>Simply, you can use a group-match within the same regular expression. To be honest, you won't use these too often. The only reason I've used them was to match HTML tags:</p>
+
+<pre class="text" style="font-family:monospace;">&lt;(.+?)&gt;.+?&lt;/1&gt;</pre>
+
+<p>Not the scariest looking regex. That finds the first <code>&lt;tag&gt;</code>, storing "tag" in group 1. Then looks for <code>&lt;/ group-1 &gt;</code> (in this case it would be <code>&lt;/tag&gt;</code>)</p>
+
+<h1>Regex in Languages</h1>
+
+<p>Now, the bit you've possibly been waiting for - how to use simple regular expressions in various languages.</p>
+
+<p>In these examples, we will start by storing a string in a variable, then we will apply the regular expression. For matching, we will display a message if it was successful, for substitutions we will display the modified variable, and for extraction we and display the groups.</p>
+
+<p>These examples will use a simple non-greedy match (For example: /st.+?g/ ), but we could use the more complicated character-classes, back-references, or anything else we have discussed previously.</p>
+
+<p>Also, in many languages, to improve readability, you can use symbols other than a forward-slash to indicate start/end of a regex - you can use various characters, for example:</p>
+
+<pre class="text" style="font-family:monospace;">$strings=~s#'#'#g
+$strings=~s^'^'^g</pre>
+
+<p>Many, many languages have built-in regex capabilities, there's no way I can cover them all, so I will focus on a few languages I consider "the biggest" for readers of an article like this. As I have said previously, the Perl regular-expressions syntax is the most common, but there are variations - as always, check that languages documentation, or have a look around for tutorials and guides.</p>
+
+<h2>Perl</h2>
+
+<p>Since we are using Perl Compatible Regexs, Perl seems like a sensible place to start.</p>
+
+<h3>Simple matching</h3>
+
+<pre class="perl" style="font-family:monospace;"><span class="kw1">my</span> <span class="re0">$string</span> <span class="sy0">=</span> <span class="st_h">'Test string!'</span><span class="sy0">;</span>
+<span class="kw1">if</span><span class="br0">(</span> <span class="re0">$string</span><span class="sy0">=~/</span>st<span class="sy0">.+?</span>g<span class="sy0">/</span> <span class="br0">)</span><span class="br0">{</span>
+    <a href="http://perldoc.perl.org/functions/print.html"><span class="kw3">print</span></a> <span class="st_h">'Match'</span><span class="sy0">;</span>
+<span class="br0">}</span></pre>
+
+<h3>Substitution</h3>
+
+<pre class="perl" style="font-family:monospace;"><span class="kw1">my</span> <span class="re0">$string</span> <span class="sy0">=</span> <span class="st_h">'Test string!'</span><span class="sy0">;</span>
+<span class="re0">$string</span><span class="sy0">=~</span><a href="http://perldoc.perl.org/functions/s.html"><span class="kw3">s</span></a><span class="sy0">/</span>st<span class="sy0">.+?</span>g<span class="sy0">/</span>replacement<span class="sy0">/;</span>
+&nbsp;
+<a href="http://perldoc.perl.org/functions/print.html"><span class="kw3">print</span></a> <span class="br0">(</span><span class="re0">$string</span><span class="br0">)</span><span class="sy0">;</span></pre>
+
+<h3>Extraction</h3>
+
+<p>Using default variables:</p>
+
+<pre class="perl" style="font-family:monospace;"><span class="kw1">my</span> <span class="re0">$string</span> <span class="sy0">=</span> <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span><span class="sy0">;</span>
+<span class="re0">$string</span><span class="sy0">=~/&lt;</span>img src<span class="sy0">=</span><span class="st_h">'([^'</span><span class="br0">]</span><span class="sy0">+</span><span class="br0">)</span><span class="st_h">' alt='</span><span class="br0">(</span><span class="br0">[</span><span class="sy0">^</span><span class="st_h">']+)'</span><span class="sy0">/;</span>
+&nbsp;
+<a href="http://perldoc.perl.org/functions/print.html"><span class="kw3">print</span></a> <span class="br0">(</span><span class="co3">$1</span> <span class="sy0">.</span> <span class="st0">"n"</span><span class="br0">)</span><span class="sy0">;</span>
+<a href="http://perldoc.perl.org/functions/print.html"><span class="kw3">print</span></a> <span class="br0">(</span><span class="co3">$2</span> <span class="sy0">.</span> <span class="st0">"n"</span><span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>Storing groups to named variables:</p>
+
+<pre class="perl" style="font-family:monospace;"><span class="kw1">my</span> <span class="re0">$string</span> <span class="sy0">=</span> <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span><span class="sy0">;</span>
+<span class="kw1">my</span> <span class="br0">(</span><span class="re0">$match_one</span><span class="sy0">,</span><span class="re0">$match_two</span><span class="br0">)</span> <span class="sy0">=</span> <span class="re0">$string</span><span class="sy0">=~/&lt;</span>img src<span class="sy0">=</span><span class="st_h">'([^'</span><span class="br0">]</span><span class="sy0">+</span><span class="br0">)</span><span class="st_h">' alt='</span><span class="br0">(</span><span class="br0">[</span><span class="sy0">^</span><span class="st_h">']+)'</span><span class="sy0">/;</span>
+&nbsp;
+<a href="http://perldoc.perl.org/functions/print.html"><span class="kw3">print</span></a> <span class="br0">(</span><span class="re0">$match_one</span> <span class="sy0">.</span> <span class="st0">"n"</span><span class="br0">)</span><span class="sy0">;</span>
+<a href="http://perldoc.perl.org/functions/print.html"><span class="kw3">print</span></a> <span class="br0">(</span><span class="re0">$match_two</span> <span class="sy0">.</span> <span class="st0">"n"</span><span class="br0">)</span><span class="sy0">;</span></pre>
+
+<h2>Ruby</h2>
+
+<p>Ruby regex handling is very similar to Perl. I don't have much experience with Ruby, so there may be better ways of doing this - these examples work, and should be enough to get you started. If you want to learn more about Ruby regex, I recommend reading the Ruby documentation, or the many online tutorials.</p>
+
+<h3>Simple matching</h3>
+
+<pre class="ruby" style="font-family:monospace;"><span class="kw3">string</span> = <span class="st0">"Test string!"</span>;
+<span class="kw1">if</span> <span class="kw3">string</span> =~ <span class="sy0">/</span>st.<span class="sy0">+</span>?g!<span class="sy0">/</span>
+    <span class="kw3">puts</span> <span class="st0">"Match"</span>
+<span class="kw1">end</span></pre>
+
+<h3>Substitution</h3>
+
+<pre class="ruby" style="font-family:monospace;"><span class="kw3">string</span> = <span class="st0">"Test string!"</span>
+<span class="kw3">string</span> = <span class="kw3">string</span>.<span class="kw3">gsub</span> <span class="sy0">/</span>st.<span class="sy0">+</span>?g<span class="sy0">/</span>, <span class="st0">"replacement"</span>
+&nbsp;
+<span class="kw3">puts</span> <span class="kw3">string</span></pre>
+
+<h3>Extraction</h3>
+
+<p>Using default variables:</p>
+
+<pre class="ruby" style="font-family:monospace;"><span class="kw3">string</span> = <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span>
+<span class="kw3">string</span>.<span class="me1">scan</span> <span class="sy0">/&lt;</span>img src=<span class="st0">'(.+?)'</span> alt=<span class="st0">'(.+?)'</span><span class="sy0">&gt;/</span>
+&nbsp;
+<span class="kw3">puts</span> $<span class="nu0">1</span>
+<span class="kw3">puts</span> $<span class="nu0">2</span></pre>
+
+<p>Storing groups to named variables:</p>
+
+<pre class="ruby" style="font-family:monospace;"><span class="kw3">string</span> = <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span>
+match_1,match_2 = <span class="sy0">/&lt;</span>img src=<span class="st0">'(.+?)'</span> alt=<span class="st0">'(.+?)'</span><span class="sy0">&gt;/</span>.<span class="me1">match</span><span class="br0">(</span><span class="kw3">string</span><span class="br0">)</span>.<span class="me1">to_a</span>
+&nbsp;
+<span class="kw3">puts</span> match_1
+<span class="kw3">puts</span> match_2</pre>
+
+<h2>Python</h2>
+
+<p>Regex in python is a module called "re". There are several different regular expression functions, some more suitable to certain situations. For example, match() will match the pattern from the start of the string, whereas search() will match anywhere in the string.</p>
+
+<h3>Simple matching</h3>
+
+<pre class="python" style="font-family:monospace;"><span class="kw1">import</span> <span class="kw3">re</span>
+<span class="kw3">string</span> = <span class="st0">"Test string!"</span>
+<span class="kw1">if</span> <span class="kw3">re</span>.<span class="me1">search</span><span class="br0">(</span><span class="st0">"st.+?g"</span>, <span class="kw3">string</span><span class="br0">)</span>:
+<span class="kw1">print</span> <span class="st0">"Match"</span></pre>
+
+<h3>Substitution</h3>
+
+<pre class="python" style="font-family:monospace;"><span class="kw1">import</span> <span class="kw3">re</span>
+<span class="kw3">string</span> = <span class="st0">"Test string!"</span>
+<span class="kw3">string</span> = <span class="kw3">re</span>.<span class="me1">sub</span><span class="br0">(</span><span class="st0">"st.+?g"</span>, <span class="st0">"replacement"</span>, <span class="kw3">string</span><span class="br0">)</span>
+&nbsp;
+<span class="kw1">print</span> <span class="kw3">string</span></pre>
+
+<h3>Extraction</h3>
+
+<p>Using default variables:</p>
+
+<pre class="python" style="font-family:monospace;"><span class="kw1">import</span> <span class="kw3">re</span>
+<span class="kw3">string</span> = <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span>
+results = <span class="kw3">re</span>.<span class="me1">search</span><span class="br0">(</span><span class="st0">"&lt;img src='(.+?)' alt='(.+?)'&gt;"</span>, <span class="kw3">string</span><span class="br0">)</span>
+&nbsp;
+<span class="kw1">print</span> results.<span class="me1">group</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>
+<span class="kw1">print</span> results.<span class="me1">group</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span></pre>
+
+<p>Storing groups to named variables:</p>
+
+<pre class="python" style="font-family:monospace;"><span class="kw1">import</span> <span class="kw3">re</span>
+<span class="kw3">string</span> = <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span>
+match_1, match_2 = <span class="kw3">re</span>.<span class="me1">search</span><span class="br0">(</span><span class="st0">"&lt;img src='(.+?)' alt='(.+?)'&gt;"</span>, <span class="kw3">string</span><span class="br0">)</span>.<span class="me1">groups</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+<span class="kw1">print</span> match_1
+<span class="kw1">print</span> match_2</pre>
+
+<h2>PHP</h2>
+
+<p>Regex in PHP is a little different to the other languages, being similar in syntax to C. The functions start with preg_, which stands for Perl Reg(ular expressions), so obviously it uses Perl-compatible regexs.</p>
+
+<h3>Simple matching</h3>
+
+<pre class="php" style="font-family:monospace;"><span class="sy1">&lt;?</span>
+<span class="re0">$string</span> <span class="sy0">=</span> <span class="st0">"Test string!"</span><span class="sy0">;</span>
+<span class="kw1">if</span><span class="br0">(</span> <a href="http://www.php.net/preg_match"><span class="kw3">preg_match</span></a><span class="br0">(</span><span class="st0">"/st.+?g/"</span><span class="sy0">,</span> <span class="re0">$string</span><span class="br0">)</span> <span class="br0">)</span><span class="br0">{</span>
+<span class="kw1">echo</span><span class="br0">(</span><span class="st0">"Match"</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="sy1">?&gt;</span></pre>
+
+<h3>Substitution</h3>
+
+<pre class="php" style="font-family:monospace;"><span class="sy1">&lt;?</span>
+<span class="re0">$string</span> <span class="sy0">=</span> <span class="st0">"Test string!"</span><span class="sy0">;</span>
+<span class="re0">$string</span> <span class="sy0">=</span> <a href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">"st.+?g"</span><span class="sy0">,</span><span class="st0">"replacement"</span><span class="sy0">,</span> <span class="re0">$string</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw1">echo</span><span class="br0">(</span><span class="re0">$string</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="sy1">?&gt;</span></pre>
+
+<h3>Extraction</h3>
+
+<p>PHP is a little different to the other languages - in the third argument, you supply a variable which receives the results.</p>
+
+<pre class="php" style="font-family:monospace;"><span class="sy1">&lt;?</span>
+<span class="re0">$string</span> <span class="sy0">=</span> <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span><span class="sy0">;</span>
+<a href="http://www.php.net/preg_match_all"><span class="kw3">preg_match_all</span></a><span class="br0">(</span><span class="st0">"/&lt;img src='(.+?)' alt='(.+?)'&gt;/"</span><span class="sy0">,</span> <span class="re0">$string</span><span class="sy0">,</span> <span class="re0">$results</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw1">echo</span><span class="br0">(</span><span class="re0">$results</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">.</span> <span class="st0">"n"</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="kw1">echo</span><span class="br0">(</span><span class="re0">$results</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">.</span> <span class="st0">"n"</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="sy1">?&gt;</span></pre>
+
+<h2>Javascript</h2>
+
+<h3>Simple matching</h3>
+
+<pre class="javascript" style="font-family:monospace;">string <span class="sy0">=</span> <span class="st0">"Test string!"</span><span class="sy0">;</span>
+<span class="kw1">if</span><span class="br0">(</span> string.<span class="me1">match</span><span class="br0">(</span><span class="co2">/st.+?g/</span><span class="br0">)</span> <span class="br0">)</span><span class="br0">{</span>
+<span class="kw3">alert</span><span class="br0">(</span><span class="st0">"Match"</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span></pre>
+
+<h3>Substitution</h3>
+
+<pre class="javascript" style="font-family:monospace;">string <span class="sy0">=</span> <span class="st0">"Test string!"</span><span class="sy0">;</span>
+string <span class="sy0">=</span> string.<span class="me1">replace</span><span class="br0">(</span><span class="co2">/st.+?g/</span><span class="sy0">,</span> <span class="st0">"replacement"</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="kw3">alert</span><span class="br0">(</span>string<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<h3>Extraction</h3>
+
+<pre class="javascript" style="font-family:monospace;">string <span class="sy0">=</span> <span class="st0">"&lt;img src='test.png' alt='Test picture'&gt;"</span><span class="sy0">;</span>
+string.<span class="me1">search</span><span class="br0">(</span> <span class="co2">/&lt;img src='(.+?)' alt='(.+?)'&gt;/</span> <span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">(</span>RegExp.$<span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="kw3">alert</span><span class="br0">(</span>RegExp.$<span class="nu0">2</span><span class="br0">)</span><span class="sy0">;</span></pre>
+
+<h1>Fineto</h1>
+
+<p>We've covered some practical examples, and gone over a bit more regular expression syntax, then explained how to do the basic regular expression stuff in a range of programming languages.</p>
+
+<p>Even though this guide is over 3000 words, I have only covered a small percentage of what you can do with regular expressions - but I hope this has helped make the regex syntax look a bit less like line-noise to you.</p>
+
+<p>One final tip: Many times I've had a regular expression that didn't work for some reason. Since regexs are so difficult to read, and the order of characters is so important - a missing character or two in the wrong order can completely break a match, and mistakes can be very hard to spot.
+More often that not, it is easier just to rewrite the expression than to spend hours trying to debug them.</p>
+
+<p>If you notice any problems in the guide, or you have any tips or advice, leave a comment!
+If you like this guide, Digg the story, submit it to Del.icio.us, upmod it on Reddit, send the link to your friends, and subscribe to the RSS feed! There's buttons at the bottom of the page for all those sites, and the RSS feed is <a href="http://neverfear.org/weblog.rss">http://neverfear.org/weblog.rss</a></p>
+					</div>
+					
+										
+					<div class="share-social-media">
+
+
+
+	<span class="share-facebook">
+		<a title="Share link on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F14%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_2&t=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%202"><img src="./Regex Tutorial Part 2_files/shareFacebook_32x32.png" alt="Share link on Facebook" title="Share link on Facebook" border="0"></a>
+	</span>
+	<span class="share-twitter">
+		<a title="Share link on Twitter" target="_blank" href="http://twitter.com/home?status=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%202:%20http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F14%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_2"><img src="./Regex Tutorial Part 2_files/shareTwitter_32x32.png" alt="Share link on Twitter" title="Share link on Twitter" border="0"></a>
+	</span>
+	<span class="share-digg">
+		<a title="Share link on Digg" target="_blank" href="http://digg.com/submit?url=http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F14%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_2&title=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%202"><img src="./Regex Tutorial Part 2_files/shareDigg_32x32.png" alt="Share link on Digg" title="Share link on Digg" border="0"></a>
+	</span>
+	<span class="share-buzz">
+		<a title="Share link on Yahoo Buzz" target="_blank" href="http://buzz.yahoo.com/buzz?targetUrl=http%3A%2F%2Fneverfear.org%2Fblog%2Fview%2F14%2FRegex_tutorial_for_people_who_should_know_Regex_but_do_not_Part_2&headline=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%202&summary=Regex%20tutorial%20for%20people%20who%20should%20know%20Regex%2C%20but%20do%20not..%20Part%202"><img src="./Regex Tutorial Part 2_files/shareBuzz_32x32.png" alt="Share link on Yahoo Buzz" title="Share link on Yahoo Buzz" border="0"></a>
+	</span>
+	
+</div>
+					
+					<div id="post-comments-footer-14" class="post-comments-footer">
+						<a href="http://neverfear.org/blog/view/14/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_2/comments">There are 203 comments on this post.</a>
+						<a href="http://neverfear.org/blog/view/14/Regex_tutorial_for_people_who_should_know_Regex__but_do_not___Part_2/comments#new"><img src="./Regex Tutorial Part 2_files/comment_new.png" alt="" title="Make a new comment">Make a comment</a>.
+					
+					</div>
+				</div>
+				<script language="Javascript" type="text/javascript">
+				SetAdjustedPostTime("post-date-14", 1203334285);
+				SetAdjustedPostTime("post-date-last-edited-14", 1249839822);
+				</script>
+				
+				<!--<hr/>-->
+
+				</div> <!-- /page-content -->
+				<div id="footnote">
+											
+						<a href="http://neverfear.org/irc/">IRC</a>
+												
+						<a href="http://neverfear.org/rss/">RSS</a>
+											
+				</div> <!-- /footnote -->
+			</div> <!-- /page-body -->
+			<div id="bottom-strip"></div>
+		</div> <!-- /page -->
+		
+		<div id="poweredby">
+			<div id="poweredby-top-strip"></div>
+			Powered by Debian, Jack Daniels, Guinness, and excessive quantities of caffeine and sugar.
+		</div> <!-- /poweredby -->
+		
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Regex Tutorial Part 2_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10119883-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+	
+
+<!-- Generated in 0.0016389999999999 -->
+<!-- Output was cached -->
+</body></html>
